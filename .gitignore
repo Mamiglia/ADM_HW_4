@@ -6,4 +6,4 @@ reducted_data.csv
 *.pyc
 
 *checkpoint*
-
+*cache*
