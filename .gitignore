@@ -5,4 +5,5 @@ reducted_data.csv
 *.pyc
 *.pyc
 
-checkpoint
+*checkpoint*
+
