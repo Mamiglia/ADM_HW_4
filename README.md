@@ -1,4 +1,4 @@
-# Homework 4 - CLsutering
+# Homework 4 - Clustering
 
 [![Button Icon]](https://nbviewer.org/github/Mamiglia/ADM_HW_4/blob/main/main.ipynb)
 
