@@ -2,18 +2,14 @@ from collections import defaultdict
 import numpy as np
 import matplotlib.pyplot as plt
 import pyspark
+from .utils import display_clusters
 from scipy.spatial.distance import pdist, squareform
-
-def display_clusters(X, y=None, means=None):
-    if y is None:
-        y = 'grey'
-    plt.scatter(X[:, 0], X[:, 1], c=y)
-    if means is not None:
-        m = np.vstack(means)
-        plt.scatter(m[:,0], m[:,1], c=range(m.shape[0]), marker='^')
-    plt.show()
+    
+sc = pyspark.SparkContext('local')
+sc.setLogLevel('OFF')
 
 def k_means(X, K, steps=100, display=False, early_stopping=.005):
+    global sc
     rdd = sc.parallelize(X)
     # initialize the first k means randomly
     means = rdd.takeSample(False, K)
